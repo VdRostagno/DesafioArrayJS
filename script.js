@@ -1,3 +1,38 @@
+console.dir(document);
+console.dir(document.head);
+console.dir(document.body);
+
+//MANIPULACION DE DOM
+
+//GET ELEMENT BY ID
+const Menu = document.getElementById("Menu");
+console.log (Menu);
+console.log(Menu.innerHTML);
+
+
+const titulo = document.getElementById("titulo")
+console.log (titulo);
+console.log(titulo.innerHTML)
+
+const parrafo = document.getElementById("parrafo");
+console.log (parrafo);
+console.log (parrafo.innerHTML);
+
+const formulariodecontacto = document.getElementById("formulariodecontacto");
+console.log (formulariodecontacto);
+console.log (formulariodecontacto.innerHTML);
+
+const tabla = document.getElementById ("tabla");
+console.log (tabla);
+console.log(tabla.innerHTML);
+
+
+//DECLARACION DE FOOTER POR MEDIO DE ELEMENT TAG 
+
+const elementTag = document.getElementsByTagName (footer);
+console.log(elementTag)
+
+
 //Creacion de usuario por medio de funcion
 function Usuario (Nombre,Apellido,Mail,Servicio){
     this.Nombre = Nombre;
@@ -137,4 +172,16 @@ productos.push(new Producto("Creacion de logos", "500"));
 //Array con for para modificar los valores segun IVA 
 for (const producto of productos)
     producto.sumaIva();
+
+
+//AGREGANDO EVENTOS - FORMULARIO DE CONTACTO 
+
+let miFormulario      = document.getElementById("formulariodecontacto");
+miFormulario.addEventListener("submit", validarFormulario);
+    
+function validarFormulario(e){
+   e.preventDefault();
+   console.log("Formulario Enviado");    
+}
+    
 
